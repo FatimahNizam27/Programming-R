@@ -1,0 +1,198 @@
+# No 1
+a <- c(1,2,3)
+b <- c(4,5,6)
+c <- c(7,8,9)
+
+one <-rbind(a,b,c)
+one
+##   [,1] [,2] [,3]
+## a    1    2    3
+## b    4    5    6
+## c    7    8    9
+# No 2
+vector <- c(1:12)
+vector
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+B <- matrix(vector)
+B
+##       [,1]
+##  [1,]    1
+##  [2,]    2
+##  [3,]    3
+##  [4,]    4
+##  [5,]    5
+##  [6,]    6
+##  [7,]    7
+##  [8,]    8
+##  [9,]    9
+## [10,]   10
+## [11,]   11
+## [12,]   12
+B <- matrix(vector, byrow = TRUE, nrow = 4)
+B
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
+# Transpose the matrix using t() function
+tB <- t(B)
+tB
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    4    7   10
+## [2,]    2    5    8   11
+## [3,]    3    6    9   12
+multi <- tB*tB
+# 3x4 * 3X4 matrix results in the multiplication of each index 
+# Example [1,1] * [1,1]
+multi
+##      [,1] [,2] [,3] [,4]
+## [1,]    1   16   49  100
+## [2,]    4   25   64  121
+## [3,]    9   36   81  144
+# Subtract the last three rows of matrix B
+subB <- B[c(2,3,4),]
+subB
+##      [,1] [,2] [,3]
+## [1,]    4    5    6
+## [2,]    7    8    9
+## [3,]   10   11   12
+# Another alternative
+subB <- B[-1,]
+subB
+##      [,1] [,2] [,3]
+## [1,]    4    5    6
+## [2,]    7    8    9
+## [3,]   10   11   12
+# No 3
+my.list <- list(Stud.id = 1245,
+                Stud.name = "Ali",
+                Stud.marks = list(56,65,68,78))
+my.list
+## $Stud.id
+## [1] 1245
+## 
+## $Stud.name
+## [1] "Ali"
+## 
+## $Stud.marks
+## $Stud.marks[[1]]
+## [1] 56
+## 
+## $Stud.marks[[2]]
+## [1] 65
+## 
+## $Stud.marks[[3]]
+## [1] 68
+## 
+## $Stud.marks[[4]]
+## [1] 78
+# No 4
+my.list$Stud.id
+## [1] 1245
+# No 5
+my.list$Stud.Age <- 17
+my.list
+## $Stud.id
+## [1] 1245
+## 
+## $Stud.name
+## [1] "Ali"
+## 
+## $Stud.marks
+## $Stud.marks[[1]]
+## [1] 56
+## 
+## $Stud.marks[[2]]
+## [1] 65
+## 
+## $Stud.marks[[3]]
+## [1] 68
+## 
+## $Stud.marks[[4]]
+## [1] 78
+## 
+## 
+## $Stud.Age
+## [1] 17
+my.list$Stud.Gender <- "Male"
+my.list
+## $Stud.id
+## [1] 1245
+## 
+## $Stud.name
+## [1] "Ali"
+## 
+## $Stud.marks
+## $Stud.marks[[1]]
+## [1] 56
+## 
+## $Stud.marks[[2]]
+## [1] 65
+## 
+## $Stud.marks[[3]]
+## [1] 68
+## 
+## $Stud.marks[[4]]
+## [1] 78
+## 
+## 
+## $Stud.Age
+## [1] 17
+## 
+## $Stud.Gender
+## [1] "Male"
+# No 6
+names(my.list) <- c("Stud.ID","Stud.Name","Stud.Marks","Stud.Age","Stud.Gender")
+my.list
+## $Stud.ID
+## [1] 1245
+## 
+## $Stud.Name
+## [1] "Ali"
+## 
+## $Stud.Marks
+## $Stud.Marks[[1]]
+## [1] 56
+## 
+## $Stud.Marks[[2]]
+## [1] 65
+## 
+## $Stud.Marks[[3]]
+## [1] 68
+## 
+## $Stud.Marks[[4]]
+## [1] 78
+## 
+## 
+## $Stud.Age
+## [1] 17
+## 
+## $Stud.Gender
+## [1] "Male"
+# No 7
+# Remove the 4th list member
+my.list[4] <- NULL
+my.list
+## $Stud.ID
+## [1] 1245
+## 
+## $Stud.Name
+## [1] "Ali"
+## 
+## $Stud.Marks
+## $Stud.Marks[[1]]
+## [1] 56
+## 
+## $Stud.Marks[[2]]
+## [1] 65
+## 
+## $Stud.Marks[[3]]
+## [1] 68
+## 
+## $Stud.Marks[[4]]
+## [1] 78
+## 
+## 
+## $Stud.Gender
+## [1] "Male"
